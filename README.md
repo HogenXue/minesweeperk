@@ -30,6 +30,7 @@ video.
 - [DataStore for Kotlin Multiplatform - Local Preferences](https://github.com/kotlearn/minesweeperk/tree/06-datastore-preferences) - [Video](https://youtu.be/xGw4p4OWZ6Q)
 - [Writing UI Tests for Compose Multiplatform](https://github.com/kotlearn/minesweeperk/tree/07-ui-tests) - [Video](https://youtu.be/otRqF7SQrz4)
 - [Automating Kotlin Multiplatform Releases with GitHub Actions](https://github.com/kotlearn/minesweeperk/tree/08-github-actions) - [Video](https://youtu.be/1Mcros96yEA)
+- [Custom Gradle Plugins: Clean Up Your Build Scripts!](https://github.com/kotlearn/minesweeperk/tree/09-gradle-plugins) - [Video](https://youtu.be/F5TYKWSwTPw)
 
 ---
 
@@ -65,6 +66,11 @@ video.
 
 This project is primarily for educational purposes, but contributions are welcome! If you’d like to
 improve or extend the project, feel free to open an issue or create a pull request.
+
+### Contributors
+
+Thanks to everyone that's contributed so far!
+- [GreatTusk](https://github.com/GreatTusk)
 
 ## License
 

@@ -1,6 +1,3 @@
-rootProject.name = "Minesweeperk"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 pluginManagement {
     repositories {
         google {
@@ -26,18 +23,11 @@ dependencyResolutionManagement {
         }
         mavenCentral()
     }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
 }
 
-includeBuild("build-logic")
-
-include(":composeApp")
-include(":ui:core")
-include(":data:core")
-include(":data:game")
-include(":data:settings")
-include(":domain:game")
-include(":domain:settings")
-include(":feature:play")
-include(":feature:settings")
-include(":feature:highscores")
-include(":feature:menu")
+include(":conventions")

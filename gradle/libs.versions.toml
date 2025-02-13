@@ -67,6 +67,10 @@ kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", versio
 kotest-framework-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 
+# Gradle Plugins
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
 [bundles]
 kotlin = ["kotlinx-dateTime", "coroutines-core", "kotlinx-serialization"]
 koin-compose = ["koin-compose", "koin-compose-viewmodel", "koin-compose-viewmodel-navigation"]
@@ -82,3 +86,10 @@ kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versio
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 room = { id = "androidx.room", version.ref = "room" }
 kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
+
+# Custom Gradle Plugins
+kotlearn-kotlinMultiplatform = { id = "com.kotlearn.minesweeperk.kotlin.multiplatform" }
+kotlearn-androidLibrary = { id = "com.kotlearn.minesweeperk.android.library" }
+kotlearn-domainModule = { id = "com.kotlearn.minesweeperk.domain.module" }
+kotlearn-dataModule = { id = "com.kotlearn.minesweeperk.data.module" }
+kotlearn-featureModule = { id = "com.kotlearn.minesweeperk.feature.module" }
