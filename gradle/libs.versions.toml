@@ -9,9 +9,9 @@ kotlinx-coroutines = "1.9.0"
 
 # Android
 agp = "8.4.2"
-android-compileSdk = "35"
+android-compileSdk = "36"
 android-minSdk = "24"
-android-targetSdk = "35"
+android-targetSdk = "36"
 androidx-activityCompose = "1.9.3"
 androidx-lifecycle = "2.8.3"
 
