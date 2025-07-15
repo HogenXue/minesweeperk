@@ -9,12 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun MenuScreen(
-    goToPlay:()->Unit,
-    goToHighScores:()->Unit,
-    goToSettings:()->Unit,
-    modifier: Modifier = Modifier
-){
+internal fun MenuScreen(
+    goToPlay: () -> Unit,
+    goToHighscores: () -> Unit,
+    goToSettings: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -27,7 +27,7 @@ fun MenuScreen(
         }
 
         TextButton(
-            onClick = goToHighScores
+            onClick = goToHighscores
         ){
             Text("HighScores")
         }
