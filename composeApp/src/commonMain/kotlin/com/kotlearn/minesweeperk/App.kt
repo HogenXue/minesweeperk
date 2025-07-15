@@ -10,9 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.kotlearn.minesweeperk.feature.highscores.HighScoreScreen
-import com.kotlearn.minesweeperk.feature.highscores.HighscoresViewModel
-import com.kotlearn.minesweeperk.feature.highscores.highScoresRoute
+import com.kotlearn.minesweeperk.feature.highscores.HighScore
+import com.kotlearn.minesweeperk.feature.highscores.highScoresRoutes
 import com.kotlearn.minesweeperk.feature.menu.Menu
 import com.kotlearn.minesweeperk.feature.menu.menuRoutes
 import org.jetbrains.compose.resources.painterResource
@@ -41,9 +40,11 @@ fun App(platformModule: Module = Module()) {
                 menuRoutes(
                     goToPlay = {},
                     goToSettings = {},
-                    goToHighScores = {}
+                    goToHighScores = {
+                        navController.navigate(HighScore)
+                    }
                 )
-                highScoresRoute()
+                highScoresRoutes()
 //                playRoutes()
 //                settingRoutes()
             }

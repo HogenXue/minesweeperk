@@ -11,7 +11,7 @@ import org.koin.compose.viewmodel.koinViewModel
 @Serializable
 data object HighScore
 
-fun NavGraphBuilder.highScoresRoute(){
+fun NavGraphBuilder.highScoresRoutes(){
     composable<HighScore> {
         HighScoreScreen(
             modifier = Modifier.fillMaxSize(),
