@@ -1,26 +1,23 @@
 package com.kotlearn.minesweeperk
 
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.kotlearn.minesweeperk.feature.highscores.HighScore
 import com.kotlearn.minesweeperk.feature.highscores.highScoresRoutes
 import com.kotlearn.minesweeperk.feature.menu.Menu
 import com.kotlearn.minesweeperk.feature.menu.menuRoutes
-import org.jetbrains.compose.resources.painterResource
+import com.kotlearn.minesweeperk.ui.core.Dimensions
+import com.kotlearn.minesweeperk.ui.core.LocalDimensions
+import com.kotlearn.minesweeperk.ui.core.LocalPadding
+import com.kotlearn.minesweeperk.ui.core.Padding
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinApplication
-import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.module.Module
-import org.koin.dsl.koinApplication
-import org.koin.dsl.module
 
 @Composable
 @Preview
@@ -30,23 +27,32 @@ fun App(platformModule: Module = Module()) {
             modules(appModule,platformModule)
         }
     ){
-        MaterialTheme {
-            val navController = rememberNavController()
+        CompositionLocalProvider(
+            LocalPadding provides Padding(
+                normal = 0.dp
+            ),
+            LocalDimensions provides Dimensions(
+                maxWidthSmall = 250.dp
+            )
+        ){
+            MaterialTheme {
+                val navController = rememberNavController()
 
-            NavHost(
-                navController = navController,
-                startDestination = Menu,
-            ){
-                menuRoutes(
-                    goToPlay = {},
-                    goToSettings = {},
-                    goToHighScores = {
-                        navController.navigate(HighScore)
-                    }
-                )
-                highScoresRoutes()
+                NavHost(
+                    navController = navController,
+                    startDestination = Menu,
+                ){
+                    menuRoutes(
+                        goToPlay = {},
+                        goToSettings = {},
+                        goToHighScores = {
+                            navController.navigate(HighScore)
+                        }
+                    )
+                    highScoresRoutes()
 //                playRoutes()
 //                settingRoutes()
+                }
             }
         }
     }

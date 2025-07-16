@@ -2,11 +2,14 @@ package com.kotlearn.minesweeperk.feature.menu
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.kotlearn.minesweeperk.ui.core.LocalDimensions
+import com.kotlearn.minesweeperk.ui.core.LocalPadding
 
 @Composable
 internal fun MenuScreen(
@@ -20,22 +23,27 @@ internal fun MenuScreen(
         verticalArrangement = Arrangement.Center,
         modifier = modifier
     ) {
-        TextButton(
-            onClick = goToPlay
-        ){
-            Text("Play")
-        }
+        val buttonModifier = Modifier
+            .padding(horizontal = LocalPadding.current.normal)
+            .widthIn(max = LocalDimensions.current.maxWidthSmall)
+            .fillMaxWidth()
 
-        TextButton(
-            onClick = goToHighscores
-        ){
-            Text("HighScores")
-        }
+        MenuButton(
+            text = "Play",
+            onClick = goToPlay,
+            modifier = buttonModifier
+        )
 
-        TextButton(
-            onClick = goToSettings
-        ){
-            Text("Settings")
-        }
+        MenuButton(
+            text = "HighScores",
+            onClick = goToHighscores,
+            modifier = buttonModifier
+        )
+
+        MenuButton(
+            text = "Settings",
+            onClick = goToSettings,
+            modifier = buttonModifier
+        )
     }
 }
