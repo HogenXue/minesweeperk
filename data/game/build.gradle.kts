@@ -39,7 +39,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.kotlearn.minesweeperk.data.settings"
+    namespace = "com.kotlearn.minesweeperk.data.game"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
