@@ -86,6 +86,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.datastore.core.android)
     debugImplementation(compose.uiTooling)
 }
 
