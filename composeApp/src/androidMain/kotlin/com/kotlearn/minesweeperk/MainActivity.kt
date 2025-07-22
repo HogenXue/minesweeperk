@@ -13,9 +13,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App(module{
-                single<Context>{applicationContext}
-            })
+            App(
+                platformModule = module {
+                    single<Context> { applicationContext }
+                }
+            )
         }
     }
 }

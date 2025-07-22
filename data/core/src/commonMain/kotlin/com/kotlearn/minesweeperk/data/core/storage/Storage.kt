@@ -1,12 +1,12 @@
 package com.kotlearn.minesweeperk.data.core.storage
 
 import kotlinx.coroutines.flow.Flow
-import kotlin.coroutines.CoroutineContext
 
 interface Storage {
+
     fun <T> getAsFlow(key: Key<T>): Flow<T?>
 
-    suspend fun<T> getKey(key: Key<T>): T?
+    suspend fun <T> get(key: Key<T>): T?
 
     suspend fun <T> writeValue(key: Key<T>, value: T?)
 
@@ -27,4 +27,5 @@ interface Storage {
         open class BooleanKey(name: String, defaultValue: Boolean?): Key<Boolean>(name, defaultValue)
 
     }
+
 }

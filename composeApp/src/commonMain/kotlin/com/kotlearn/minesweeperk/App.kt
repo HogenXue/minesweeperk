@@ -11,6 +11,8 @@ import com.kotlearn.minesweeperk.feature.highscores.HighScore
 import com.kotlearn.minesweeperk.feature.highscores.highScoresRoutes
 import com.kotlearn.minesweeperk.feature.menu.Menu
 import com.kotlearn.minesweeperk.feature.menu.menuRoutes
+import com.kotlearn.minesweeperk.feature.settings.Settings
+import com.kotlearn.minesweeperk.feature.settings.settingsRoutes
 import com.kotlearn.minesweeperk.ui.core.Dimensions
 import com.kotlearn.minesweeperk.ui.core.LocalDimensions
 import com.kotlearn.minesweeperk.ui.core.LocalPadding
@@ -44,14 +46,16 @@ fun App(platformModule: Module = Module()) {
                 ){
                     menuRoutes(
                         goToPlay = {},
-                        goToSettings = {},
+                        goToSettings = {
+                            navController.navigate(Settings)
+                        },
                         goToHighScores = {
                             navController.navigate(HighScore)
                         }
                     )
                     highScoresRoutes()
 //                playRoutes()
-//                settingRoutes()
+                    settingsRoutes()
                 }
             }
         }
