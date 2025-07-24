@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
@@ -95,6 +96,7 @@ private fun Tile(
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
+            .testTag("tile")
             .background(color = LocalMinesweeperBoardColorScheme.current.background)
             .run {
                 if (state is TileState.Revealed) {
